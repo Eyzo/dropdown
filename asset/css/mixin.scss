@@ -1,0 +1,23 @@
+@mixin triangleRight ($size: 10px,$color: #000000){
+  @include pos($size);
+  border-top: $size solid transparent;
+  border-left: ($size * 2) solid $color;
+  border-bottom: $size solid transparent;
+}
+
+@mixin triangleDown ($size: 10px,$color: #000000){
+  @include pos($size);
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-top: ($size * 2) solid $color;
+}
+
+@mixin pos($size){
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 37%;
+  top: 50%;
+  margin-top: -$size;
+}

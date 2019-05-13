@@ -1,0 +1,73 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.menu-gauche {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: -webkit-fill-available;
+  background: #bfbfbf;
+}
+.menu-gauche .menu-link, .menu-gauche .dropdown {
+  list-style: none;
+  padding: 0;
+}
+.menu-gauche .link {
+  text-align: center;
+  cursor: pointer;
+  padding: 5px;
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+  position: relative;
+  border-top: solid #000000 2px;
+}
+.menu-gauche .link:last-child {
+  border-bottom: solid #000000 2px;
+}
+.menu-gauche .link:hover {
+  background: #a6a6a6;
+}
+.menu-gauche .link:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 37%;
+  top: 50%;
+  margin-top: -5px;
+  border-top: 5px solid transparent;
+  border-left: 10px solid #000000;
+  border-bottom: 5px solid transparent;
+}
+.menu-gauche .link.active:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 37%;
+  top: 50%;
+  margin-top: -5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #000000;
+}
+
+.dropdown {
+  background: #8d8d8d;
+}
+.dropdown .dropdown-link {
+  text-align: center;
+  cursor: pointer;
+  padding: 5px;
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+  position: relative;
+}
+.dropdown .dropdown-link:hover {
+  background: #747474;
+}
+
+/*# sourceMappingURL=style.css.map */

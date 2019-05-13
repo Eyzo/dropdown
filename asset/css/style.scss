@@ -1,0 +1,70 @@
+@import "mixin";
+
+body{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+$width: 300px;
+$height: -webkit-fill-available;
+$background: #bfbfbf;
+$triangle-size: 5px;
+$dropdown: #8d8d8d;
+
+.menu-gauche{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $width;
+  height: $height;
+  background: $background;
+
+  .menu-link{
+    list-style: none;
+    padding: 0;
+  }
+
+  .link {
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    border-top: solid #000000 2px;
+
+    &:last-child {
+      border-bottom: solid #000000 2px;
+    }
+
+    &:hover{
+      background: darken($background,10);
+    }
+
+    &:after {
+      @include triangleRight($triangle-size, #000000);
+    }
+
+    &.active:after {
+      @include  triangleDown($triangle-size, #000000);
+    }
+  }
+}
+
+.dropdown{
+  @extend .menu-link;
+  background: $dropdown;
+
+  .dropdown-link{
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+
+    &:hover {
+      background: darken($dropdown,10);
+    }
+  }
+}
